@@ -255,6 +255,8 @@ impl<T: DeviceCopy> ops::DerefMut for LockedBuffer<T> {
 }
 impl<T: DeviceCopy> Drop for LockedBuffer<T> {
     fn drop(&mut self) {
+	return;
+
         if self.buf.is_null() {
             return;
         }
