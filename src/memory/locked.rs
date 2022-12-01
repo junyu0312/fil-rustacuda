@@ -201,6 +201,8 @@ impl<T: DeviceCopy> LockedBuffer<T> {
     /// }
     /// ```
     pub fn drop(mut buf: LockedBuffer<T>) -> DropResult<LockedBuffer<T>> {
+	return Ok(());
+
         if buf.buf.is_null() {
             return Ok(());
         }
